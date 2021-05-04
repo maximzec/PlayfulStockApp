@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'components/stock-card-vertical.dart';
 
 void main() {
   runApp(MyApp());
@@ -73,7 +74,45 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                 ),
-              )
+              ),
+              Padding(
+                  padding: EdgeInsets.only(top: 40, left: 30, right: 30),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("What's to Buy?",
+                          style: TextStyle(
+                              fontFamily: 'SF Pro Display',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 22)),
+                      Text(
+                        "See All →",
+                        style: TextStyle(
+                            fontFamily: 'SF Pro Display',
+                            fontWeight: FontWeight.normal,
+                            fontSize: 18,
+                            color: Color(0xFFFE555D)),
+                      )
+                    ],
+                  )),
+              Padding(
+                  padding: EdgeInsets.only(top: 20),
+                  child: Container(
+                    width: 500,
+                    height: 170,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      padding: EdgeInsets.only(right: 20),
+                      children: [
+                        StockVerticalCard("https://www.pngegg.com/ru/png-wvjee",
+                            Color(0xFF676767), Color(0xFF000000)),
+                        //StockVerticalCard(Color(0xFFDC4F00), Color(0xFFE80B0B)),
+                        //StockVerticalCard(Color(0xFF5CE2FF), Color(0xFF0038FF)),
+
+                        //Text('HELLO')
+                      ],
+                    ),
+                  ))
             ],
           ),
         ),
